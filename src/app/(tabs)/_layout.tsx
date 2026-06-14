@@ -1,10 +1,28 @@
 import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { Tabs } from 'expo-router';
-import { Platform } from 'react-native';
+import { ColorValue, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Colors } from '@/constants/Colors';
 import { useAuthStore } from '@/store/useAuthStore';
+
+type TabIconProps = { color: ColorValue; size: number; focused: boolean };
+
+const HomeIcon = ({ color, size, focused }: TabIconProps) => (
+    <Ionicons name={focused ? 'home' : 'home-outline'} size={size} color={color} />
+);
+
+const SearchIcon = ({ color, size, focused }: TabIconProps) => (
+    <Ionicons name={focused ? 'search' : 'search-outline'} size={size} color={color} />
+);
+
+const CollectionIcon = ({ color, size, focused }: TabIconProps) => (
+    <Ionicons name={focused ? 'albums' : 'albums-outline'} size={size} color={color} />
+);
+
+const ProfileIcon = ({ color, size, focused }: TabIconProps) => (
+    <Ionicons name={focused ? 'person' : 'person-outline'} size={size} color={color} />
+);
 
 export default function TabLayout() {
     const insets = useSafeAreaInsets();
@@ -43,19 +61,14 @@ export default function TabLayout() {
                     fontSize: 24,
                 },
                 headerTitleAlign: 'left',
+                freezeOnBlur: true,
             }}>
             <Tabs.Screen
                 name="home"
                 options={{
                     title: 'Home',
                     headerShown: false,
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons
-                            name={focused ? 'home' : 'home-outline'}
-                            size={size}
-                            color={color}
-                        />
-                    ),
+                    tabBarIcon: HomeIcon,
                     // headerRight: () => <HeaderRightProfileIcon />,
                 }}
             />
@@ -63,13 +76,7 @@ export default function TabLayout() {
                 name="search"
                 options={{
                     title: 'Search',
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons
-                            name={focused ? 'search' : 'search-outline'}
-                            size={size}
-                            color={color}
-                        />
-                    ),
+                    tabBarIcon: SearchIcon,
                     // headerRight: () => <HeaderRightProfileIcon />,
                 }}
             />
@@ -90,13 +97,7 @@ export default function TabLayout() {
                     title: 'Collection',
                     headerShown: false,
                     headerTitle: 'My Collection',
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons
-                            name={focused ? 'albums' : 'albums-outline'}
-                            size={size}
-                            color={color}
-                        />
-                    ),
+                    tabBarIcon: CollectionIcon,
                     // headerRight: () => <HeaderRightProfileIcon />,
                 }}
             />
@@ -104,13 +105,7 @@ export default function TabLayout() {
                 name="profile"
                 options={{
                     title: 'Profile',
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons
-                            name={focused ? 'person' : 'person-outline'}
-                            size={size}
-                            color={color}
-                        />
-                    ),
+                    tabBarIcon: ProfileIcon,
                 }}
             />
             <Tabs.Screen
