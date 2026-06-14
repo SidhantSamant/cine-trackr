@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { Image } from 'expo-image';
 import { useMemo } from 'react';
 import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
@@ -70,17 +70,17 @@ export default function LibraryGridList({
                 <GridListSkeleton />
             ) : !data || data.length === 0 ? (
                 // Empty State
-                <View className="h-full w-full items-center justify-center rounded-2xl border border-dashed border-neutral-800 bg-neutral-900/20">
+                (<View className="h-full w-full items-center justify-center rounded-2xl border border-dashed border-neutral-800 bg-neutral-900/20">
                     <View className="mb-2 rounded-full bg-neutral-800 p-3">
                         <Ionicons name={'film'} size={24} color="#525252" />
                     </View>
                     <Text className="text-sm font-medium text-neutral-500">
                         {emptyMessage || `No ${activeTab} found`}
                     </Text>
-                </View>
+                </View>)
             ) : (
                 // Content Grid
-                <View className="flex-row flex-wrap" style={{ gap: GAP }}>
+                (<View className="flex-row flex-wrap" style={{ gap: GAP }}>
                     {displayItems.map((item, index) => (
                         <Animated.View
                             key={item.id}
@@ -94,7 +94,6 @@ export default function LibraryGridList({
                             />
                         </Animated.View>
                     ))}
-
                     {/* More Card */}
                     {remainingCount > 0 && (
                         <View style={{ width: itemWidth }}>
@@ -123,7 +122,7 @@ export default function LibraryGridList({
                             </BouncyPressable>
                         </View>
                     )}
-                </View>
+                </View>)
             )}
         </View>
     );

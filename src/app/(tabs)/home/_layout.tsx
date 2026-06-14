@@ -1,6 +1,6 @@
 import { Colors } from '@/constants/Colors';
 import { router, Stack } from 'expo-router';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { Pressable } from 'react-native';
 
 export default function HomeStackLayout() {

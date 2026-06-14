@@ -56,6 +56,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         ],
         'expo-image',
         'expo-status-bar',
+        '@react-native-vector-icons/ionicons',
     ],
     experiments: {
         typedRoutes: true,

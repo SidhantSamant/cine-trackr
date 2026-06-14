@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, View, Text } from 'react-native';
 import { Image } from 'expo-image';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { router } from 'expo-router';
 import { getTMDBImageSource, getBlurHash, BLURHASH_TRANSITION } from '@/utils/imgHelper';
 import { getRatingColor } from '@/utils/uiHelper';

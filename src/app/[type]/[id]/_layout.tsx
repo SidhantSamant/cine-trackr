@@ -1,5 +1,5 @@
 import { Colors } from '@/constants/Colors';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { router, Stack } from 'expo-router';
 import { Pressable } from 'react-native';
 

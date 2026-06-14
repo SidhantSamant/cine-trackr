@@ -5,7 +5,7 @@ import { useGlobalError } from '@/context/GlobalErrorContext';
 import { useDebounce } from '@/hooks/useDebounce';
 import { SearchType } from '@/models/TVShowVM';
 import { tmdbService } from '@/utils/tmdbService';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { FlatList, Keyboard, Pressable, Text, TextInput, View } from 'react-native';

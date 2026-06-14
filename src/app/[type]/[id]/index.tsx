@@ -20,7 +20,7 @@ import {
     getMovieYear,
     getRatingColor,
 } from '@/utils/uiHelper';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { useQuery } from '@tanstack/react-query';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';

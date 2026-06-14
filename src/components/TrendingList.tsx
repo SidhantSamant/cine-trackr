@@ -6,7 +6,7 @@ import {
     getPlaceholderImage,
     getTMDBImageSource,
 } from '@/utils/imgHelper';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Link } from 'expo-router';

@@ -8,7 +8,7 @@ import { ToastProvider } from '@/context/ToastContext';
 import '../../global.css';
 import { supabase } from '@/lib/supabase';
 import { useAuthStore } from '@/store/useAuthStore';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { ThemeProvider } from 'expo-router/react-navigation';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -48,7 +48,6 @@ export default function RootLayout() {
 
     const [loaded, fontError] = useFonts({
         SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
-        ...Ionicons.font,
     });
 
     // init google auth

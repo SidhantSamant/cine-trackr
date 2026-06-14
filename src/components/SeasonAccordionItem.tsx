@@ -9,7 +9,7 @@ import { episodeService } from '@/utils/episodeService';
 import { getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
 import { tmdbService } from '@/utils/tmdbService';
 import { getRatingColor } from '@/utils/uiHelper';
-import { Ionicons } from '@expo/vector-icons';
+import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { useQuery } from '@tanstack/react-query';
 import { Image } from 'expo-image';
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
