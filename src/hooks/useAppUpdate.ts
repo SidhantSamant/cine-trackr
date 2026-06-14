@@ -28,7 +28,7 @@ export const useAppUpdate = () => {
 
     useEffect(() => {
         const checkVersion = async () => {
-            // if (__DEV__) return;
+            if (__DEV__) return;
 
             try {
                 const currentVersion = Application.nativeApplicationVersion;

@@ -4,12 +4,13 @@ import { MyDarkTheme } from '@/constants/Theme';
 import { AuthSheetProvider } from '@/context/AuthSheetContext';
 import { GlobalErrorProvider } from '@/context/GlobalErrorContext';
 import { ToastProvider } from '@/context/ToastContext';
-import '@/global.css';
+// import '@/global.css';
+import '../../global.css';
 import { supabase } from '@/lib/supabase';
 import { useAuthStore } from '@/store/useAuthStore';
 import { Ionicons } from '@expo/vector-icons';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { ThemeProvider } from '@react-navigation/native';
+import { ThemeProvider } from 'expo-router/react-navigation';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useFonts } from 'expo-font';
 import * as NavigationBar from 'expo-navigation-bar';
@@ -46,7 +47,7 @@ export default function RootLayout() {
     const setSession = useAuthStore((state) => state.setSession);
 
     const [loaded, fontError] = useFonts({
-        SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+        SpaceMono: require('@/assets/fonts/SpaceMono-Regular.ttf'),
         ...Ionicons.font,
     });
 
