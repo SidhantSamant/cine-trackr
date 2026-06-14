@@ -1,3 +1,6 @@
+import { useQuery } from '@tanstack/react-query';
+import { ScrollView, View } from 'react-native';
+
 import HomeListSection from '@/components/HomeListSection';
 import LibraryListSection from '@/components/LibraryListSection';
 import TrendingList from '@/components/TrendingList';
@@ -5,8 +8,6 @@ import { TrendingSkeleton } from '@/components/UI/Skeletons';
 import { Colors } from '@/constants/Colors';
 import { useAuthStore } from '@/store/useAuthStore';
 import { tmdbService } from '@/utils/tmdbService';
-import { useQuery } from '@tanstack/react-query';
-import { ScrollView, View } from 'react-native';
 
 export default function HomeScreen() {
     const user = useAuthStore((state) => state.user);
@@ -56,7 +57,7 @@ export default function HomeScreen() {
 
                         <LibraryListSection
                             title="Your Favorites"
-                            isFavorite={true}
+                            isFavorite
                             emptyMessage="No favorites yet"
                             isGridView={false}
                         />

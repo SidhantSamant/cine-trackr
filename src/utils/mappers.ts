@@ -20,7 +20,7 @@ export const mapTmdbToLibraryItem = (user_id: string, data: TmdbData, type: Medi
         is_anime: !!isAnime,
 
         // Metadata
-        title: title,
+        title,
         poster_path: data.poster_path,
         backdrop_path: data.backdrop_path,
         series_status: data.status, // "Ended", "Returning Series"

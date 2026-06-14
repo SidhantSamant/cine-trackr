@@ -1,8 +1,3 @@
-import { useGlobalError } from '@/context/GlobalErrorContext';
-import { useToast } from '@/context/ToastContext';
-import { supabase } from '@/lib/supabase';
-import { getSupabaseAuthError } from '@/utils/uiHelper';
-import { validate } from '@/utils/validationHelper';
 import { TrueSheet } from '@lodev09/react-native-true-sheet';
 import { useMutation } from '@tanstack/react-query';
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
@@ -15,14 +10,21 @@ import {
     TextInput,
     View,
 } from 'react-native';
+
 import AuthInput from './UI/AuthInput';
+
+import { useGlobalError } from '@/context/GlobalErrorContext';
+import { useToast } from '@/context/ToastContext';
+import { supabase } from '@/lib/supabase';
+import { getSupabaseAuthError } from '@/utils/uiHelper';
+import { validate } from '@/utils/validationHelper';
 
 export interface ChangePasswordSheetRef {
     present: () => void;
     dismiss: () => void;
 }
 
-const ChangePasswordSheet = forwardRef<ChangePasswordSheetRef, {}>((props, ref) => {
+const ChangePasswordSheet = forwardRef<ChangePasswordSheetRef, object>((props, ref) => {
     const { showError } = useGlobalError();
     const { showSuccessToast } = useToast();
     const sheetRef = useRef<TrueSheet>(null);
@@ -79,9 +81,9 @@ const ChangePasswordSheet = forwardRef<ChangePasswordSheetRef, {}>((props, ref) 
             onDidDismiss={onDismiss}
             detents={['auto']}
             cornerRadius={24}
-            backgroundColor={'#121212'}
+            backgroundColor="#121212"
             grabberOptions={{ width: 48, height: 4, topMargin: 12, color: '#fff' }}
-            grabber={true}>
+            grabber>
             <Pressable onPress={Keyboard.dismiss} style={StyleSheet.absoluteFill} />
 
             <View pointerEvents="box-none" className="px-6 pb-12 pt-6">
@@ -101,7 +103,7 @@ const ChangePasswordSheet = forwardRef<ChangePasswordSheetRef, {}>((props, ref) 
                         value={password}
                         onChangeText={setPassword}
                         editable={!isPending}
-                        secureTextEntry={true}
+                        secureTextEntry
                         textContentType="newPassword"
                         autoComplete="new-password"
                         returnKeyType="next"
@@ -115,7 +117,7 @@ const ChangePasswordSheet = forwardRef<ChangePasswordSheetRef, {}>((props, ref) 
                         value={confirmPassword}
                         onChangeText={setConfirmPassword}
                         editable={!isPending}
-                        secureTextEntry={true}
+                        secureTextEntry
                         textContentType="newPassword"
                         returnKeyType="done"
                         onSubmitEditing={handleUpdate}
@@ -124,7 +126,7 @@ const ChangePasswordSheet = forwardRef<ChangePasswordSheetRef, {}>((props, ref) 
                     <Pressable
                         onPress={handleUpdate}
                         disabled={isPending}
-                        className={`mt-4 items-center rounded-full bg-white py-4 shadow-lg active:opacity-90`}>
+                        className="mt-4 items-center rounded-full bg-white py-4 shadow-lg active:opacity-90">
                         {isPending ? (
                             <ActivityIndicator color="black" />
                         ) : (

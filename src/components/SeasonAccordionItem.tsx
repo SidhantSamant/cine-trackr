@@ -1,15 +1,4 @@
-import { Colors } from '@/constants/Colors';
-import { useGlobalError } from '@/context/GlobalErrorContext';
-import { useEpisodeGuide } from '@/hooks/useEpisodeGuide';
-import { QUERY_KEYS } from '@/hooks/useLibrary';
-import { EpisodeVM, SeasonVM } from '@/models/SeasonVM';
-import UserLibraryVM from '@/models/UserLibraryVM';
-import { useAuthStore } from '@/store/useAuthStore';
-import { episodeService } from '@/utils/episodeService';
-import { getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
-import { tmdbService } from '@/utils/tmdbService';
-import { getRatingColor } from '@/utils/uiHelper';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { useQuery } from '@tanstack/react-query';
 import { Image } from 'expo-image';
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
@@ -23,9 +12,22 @@ import Animated, {
     LinearTransition,
     Easing,
 } from 'react-native-reanimated';
+
 import EpisodeItem from './EpisodeItem';
 import { EpisodeListSkeleton } from './UI/Skeletons';
+
+import { Colors } from '@/constants/Colors';
 import { useAuthSheet } from '@/context/AuthSheetContext';
+import { useGlobalError } from '@/context/GlobalErrorContext';
+import { useEpisodeGuide } from '@/hooks/useEpisodeGuide';
+import { QUERY_KEYS } from '@/hooks/useLibrary';
+import { EpisodeVM, SeasonVM } from '@/models/SeasonVM';
+import UserLibraryVM from '@/models/UserLibraryVM';
+import { useAuthStore } from '@/store/useAuthStore';
+import { episodeService } from '@/utils/episodeService';
+import { getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
+import { tmdbService } from '@/utils/tmdbService';
+import { getRatingColor } from '@/utils/uiHelper';
 
 interface Props {
     tvShowId: number;
@@ -274,7 +276,7 @@ const SeasonAccordionItem = ({
                         disabled={toggleSeason.isPending || isLoading || releasedEpisodeCount === 0}
                         className={`mx-1.5 rounded-full p-2 active:scale-90 active:opacity-70 ${isSeasonFullyWatched ? 'bg-green-500' : 'bg-neutral-300'}`}>
                         <Ionicons
-                            name={'checkmark-sharp'}
+                            name="checkmark-sharp"
                             size={16}
                             color={isSeasonFullyWatched ? 'white' : '#333333'}
                         />

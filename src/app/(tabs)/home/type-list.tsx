@@ -1,9 +1,10 @@
-import PaginatedMediaGrid from '@/components/UI/PaginatedMediaGrid';
-import { MediaType } from '@/models/TVShowVM';
-import { tmdbService } from '@/utils/tmdbService';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { useLayoutEffect } from 'react';
+
+import PaginatedMediaGrid from '@/components/UI/PaginatedMediaGrid';
+import { MediaType } from '@/models/TVShowVM';
+import { tmdbService } from '@/utils/tmdbService';
 
 export default function TypeListScreen() {
     const navigation = useNavigation();

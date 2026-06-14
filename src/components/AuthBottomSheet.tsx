@@ -1,11 +1,6 @@
-import { useGlobalError } from '@/context/GlobalErrorContext';
-import { useToast } from '@/context/ToastContext';
-import { supabase } from '@/lib/supabase';
-import { useAuthStore } from '@/store/useAuthStore';
-import { getSupabaseAuthError } from '@/utils/uiHelper';
-import { validate } from '@/utils/validationHelper';
 import { TrueSheet } from '@lodev09/react-native-true-sheet';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { useMutation } from '@tanstack/react-query';
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import {
@@ -18,15 +13,22 @@ import {
     TextInput,
     View,
 } from 'react-native';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+
 import AuthInput from './UI/AuthInput';
+
+import { useGlobalError } from '@/context/GlobalErrorContext';
+import { useToast } from '@/context/ToastContext';
+import { supabase } from '@/lib/supabase';
+import { useAuthStore } from '@/store/useAuthStore';
+import { getSupabaseAuthError } from '@/utils/uiHelper';
+import { validate } from '@/utils/validationHelper';
 
 export interface AuthBottomSheetRef {
     present: (mode: 'login' | 'signup') => void;
     dismiss: () => void;
 }
 
-const AuthBottomSheet = forwardRef<AuthBottomSheetRef, {}>((props, ref) => {
+const AuthBottomSheet = forwardRef<AuthBottomSheetRef, object>((props, ref) => {
     const { showError } = useGlobalError();
     const { showSuccessToast } = useToast();
     const setSession = useAuthStore((state) => state.setSession);
@@ -179,9 +181,9 @@ const AuthBottomSheet = forwardRef<AuthBottomSheetRef, {}>((props, ref) => {
             onDidDismiss={onDismiss}
             detents={['auto']}
             cornerRadius={24}
-            backgroundColor={'#121212'}
+            backgroundColor="#121212"
             grabberOptions={{ width: 48, height: 4, topMargin: 12, color: '#fff' }}
-            grabber={true}>
+            grabber>
             <Pressable onPress={Keyboard.dismiss} style={StyleSheet.absoluteFill} />
 
             <View pointerEvents="box-none" className="px-6 pb-12 pt-6">
@@ -217,7 +219,7 @@ const AuthBottomSheet = forwardRef<AuthBottomSheetRef, {}>((props, ref) => {
                         value={password}
                         onChangeText={setPassword}
                         editable={!isPending}
-                        secureTextEntry={true}
+                        secureTextEntry
                         textContentType={mode === 'login' ? 'password' : 'newPassword'}
                         autoComplete={mode === 'login' ? 'password' : 'new-password'}
                         returnKeyType={mode === 'signup' ? 'next' : 'done'}
@@ -234,7 +236,7 @@ const AuthBottomSheet = forwardRef<AuthBottomSheetRef, {}>((props, ref) => {
                             value={confirmPassword}
                             onChangeText={setConfirmPassword}
                             editable={!isPending}
-                            secureTextEntry={true}
+                            secureTextEntry
                             textContentType="newPassword"
                             returnKeyType="done"
                             onSubmitEditing={handleSubmit}

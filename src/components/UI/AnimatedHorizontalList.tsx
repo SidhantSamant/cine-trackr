@@ -1,9 +1,11 @@
-import { MovieVM } from '@/models/MovieVM';
-import { TVShowVM } from '@/models/TVShowVM';
 import { useCallback } from 'react';
 import { StyleProp, ViewStyle } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+
 import MediaListItem from '../MediaListItem';
+
+import { MovieVM } from '@/models/MovieVM';
+import { TVShowVM } from '@/models/TVShowVM';
 
 type AnimatedHorizontalListProps = {
     data: (MovieVM | TVShowVM)[] | undefined;

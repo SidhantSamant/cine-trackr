@@ -1,7 +1,8 @@
-import { Colors } from '@/constants/Colors';
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { router, Stack } from 'expo-router';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
 import { Pressable } from 'react-native';
+
+import { Colors } from '@/constants/Colors';
 
 export default function LegalLayout() {
     return (

@@ -1,4 +1,4 @@
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { Link } from 'expo-router';
 import { Pressable } from 'react-native';
 
@@ -10,7 +10,7 @@ export function HeaderRightProfileIcon({ addExtraMargin = true }: { addExtraMarg
                     <Ionicons
                         name="person-circle"
                         size={36}
-                        color={'#8c8c8c'}
+                        color="#8c8c8c"
                         style={{
                             marginRight: addExtraMargin ? 16 : 0,
                             marginBottom: addExtraMargin ? 8 : 0,
@@ -31,7 +31,7 @@ export function HeaderRightSettingsIcon({ addExtraMargin = true }: { addExtraMar
                     <Ionicons
                         name="settings-outline"
                         size={36}
-                        color={'white'}
+                        color="white"
                         style={{
                             marginRight: addExtraMargin ? 16 : 0,
                             marginBottom: addExtraMargin ? 8 : 0,

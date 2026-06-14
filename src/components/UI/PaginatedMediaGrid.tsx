@@ -1,10 +1,11 @@
+import { router } from 'expo-router';
+import { useEffect } from 'react';
+import { ActivityIndicator, FlatList, View } from 'react-native';
+
 import MediaListItem from '@/components/MediaListItem';
 import { Colors } from '@/constants/Colors';
 import { useGlobalError } from '@/context/GlobalErrorContext';
 import { MediaType } from '@/models/TVShowVM';
-import { router } from 'expo-router';
-import { useEffect } from 'react';
-import { ActivityIndicator, FlatList, View } from 'react-native';
 
 interface PaginatedMediaGridProps {
     listData: any[] | undefined;
@@ -62,7 +63,7 @@ export default function PaginatedMediaGrid({
                     <MediaListItem
                         data={item}
                         type={(item.media_type as MediaType) || 'tv'}
-                        isGridView={true}
+                        isGridView
                     />
                 )}
                 onEndReached={() => {

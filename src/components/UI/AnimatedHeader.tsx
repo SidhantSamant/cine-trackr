@@ -1,9 +1,10 @@
-import { Colors } from '@/constants/Colors';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { router } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { Colors } from '@/constants/Colors';
 
 interface AnimatedHeaderProps {
     title: string;

@@ -1,9 +1,11 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import UserEpisodeVM from '@/models/UserEpisodeVM';
-import { episodeService } from '@/utils/episodeService';
+
 import { QUERY_KEYS } from './useLibrary';
+
+import UserEpisodeVM from '@/models/UserEpisodeVM';
 import UserLibraryVM from '@/models/UserLibraryVM';
 import { useAuthStore } from '@/store/useAuthStore';
+import { episodeService } from '@/utils/episodeService';
 
 type ToggleEpisodeProps = {
     show: UserLibraryVM;

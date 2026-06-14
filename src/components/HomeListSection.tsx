@@ -1,12 +1,14 @@
-import { getCategorySlug, SectionHeadings } from '@/utils/homeScreenHelper';
-import { tmdbService } from '@/utils/tmdbService';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { View } from 'react-native';
+
 import SectionHeader, { ListMediaType } from './SectionHeader';
-import { MediaListSkeleton } from './UI/Skeletons';
 import AnimatedHorizontalList from './UI/AnimatedHorizontalList';
+import { MediaListSkeleton } from './UI/Skeletons';
+
+import { getCategorySlug, SectionHeadings } from '@/utils/homeScreenHelper';
+import { tmdbService } from '@/utils/tmdbService';
 
 type HomeListSectionProps = {
     listType: 'top_rated' | 'trending' | 'hidden_gems';
@@ -72,7 +74,7 @@ export default function HomeListSection({ listType }: HomeListSectionProps) {
     }, [mediaType, listHeading]);
 
     if (isLoading) {
-        return <MediaListSkeleton hasTitle={true} />;
+        return <MediaListSkeleton hasTitle />;
     }
 
     return (

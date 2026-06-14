@@ -1,13 +1,14 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { Image } from 'expo-image';
+import { router } from 'expo-router';
 import React from 'react';
 import { Pressable, View, Text } from 'react-native';
-import { Image } from 'expo-image';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { router } from 'expo-router';
-import { getTMDBImageSource, getBlurHash, BLURHASH_TRANSITION } from '@/utils/imgHelper';
-import { getRatingColor } from '@/utils/uiHelper';
+
+import { Colors } from '@/constants/Colors';
 import { MovieVM } from '@/models/MovieVM';
 import { TVShowVM } from '@/models/TVShowVM';
-import { Colors } from '@/constants/Colors';
+import { getTMDBImageSource, getBlurHash, BLURHASH_TRANSITION } from '@/utils/imgHelper';
+import { getRatingColor } from '@/utils/uiHelper';
 
 const SearchResultItem = React.memo(({ item }: { item: MovieVM | TVShowVM }) => {
     const isMovie = item.media_type === 'movie';

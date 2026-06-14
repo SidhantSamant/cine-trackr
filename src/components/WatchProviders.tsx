@@ -1,7 +1,8 @@
-import { getTMDBImageSource } from '@/utils/imgHelper';
 import { Image } from 'expo-image';
 import React, { useMemo } from 'react';
 import { ScrollView, Text, View } from 'react-native';
+
+import { getTMDBImageSource } from '@/utils/imgHelper';
 
 interface WatchProvidersProps {
     providers: any;

@@ -1,6 +1,7 @@
-import { Colors } from '@/constants/Colors';
 import { ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { Colors } from '@/constants/Colors';
 
 const privacyData = {
     title: 'Privacy Policy',

@@ -1,5 +1,4 @@
-import { Colors } from '@/constants/Colors';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import * as Haptics from 'expo-haptics';
 import { memo, useCallback } from 'react';
 import { Pressable, PressableProps, Text, View } from 'react-native';
@@ -10,6 +9,8 @@ import Animated, {
     withSpring,
     withTiming,
 } from 'react-native-reanimated';
+
+import { Colors } from '@/constants/Colors';
 
 export type ListMediaType = 'all' | 'movies' | 'shows' | 'anime';
 

@@ -1,11 +1,12 @@
+import { Image } from 'expo-image';
+import { router, useLocalSearchParams } from 'expo-router';
+import { Pressable } from 'react-native';
+
 import { Colors } from '@/constants/Colors';
 import { useThrottle } from '@/hooks/useThrottle';
 import { MovieVM } from '@/models/MovieVM';
 import { MediaType, TVShowVM } from '@/models/TVShowVM';
 import { BLURHASH_TRANSITION, getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
-import { Image } from 'expo-image';
-import { router, useLocalSearchParams } from 'expo-router';
-import { Pressable } from 'react-native';
 
 type MediaListItemProps = {
     data?: MovieVM | TVShowVM;
@@ -34,7 +35,7 @@ const MediaListItem = ({ isGridView, isLibrary, data, type }: MediaListItemProps
 
     return (
         //<Pressable style={{ width: width }} onPress={() => router.navigate(`/${type}/${data?.id}`)}>
-        <Pressable style={{ width: width }} onPress={handlePress}>
+        <Pressable style={{ width }} onPress={handlePress}>
             <Image
                 source={getTMDBImageSource(data?.poster_path)}
                 style={{

@@ -1,5 +1,6 @@
+import { DarkTheme, Theme } from 'expo-router/react-navigation';
+
 import { Colors } from './Colors';
-import { DarkTheme, Theme } from "expo-router/react-navigation";
 
 export const MyDarkTheme: Theme = {
     ...DarkTheme,

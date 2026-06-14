@@ -1,3 +1,9 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { useQuery } from '@tanstack/react-query';
+import { useFocusEffect, useRouter } from 'expo-router';
+import { useCallback, useRef } from 'react';
+import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-native';
+
 import ChangePasswordSheet, { ChangePasswordSheetRef } from '@/components/ChangePasswordSheet';
 import { Colors } from '@/constants/Colors';
 import { useAuthSheet } from '@/context/AuthSheetContext';
@@ -5,11 +11,6 @@ import { useGlobalError } from '@/context/GlobalErrorContext';
 import { useToast } from '@/context/ToastContext';
 import { supabase } from '@/lib/supabase';
 import { useAuthStore } from '@/store/useAuthStore';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { useQuery } from '@tanstack/react-query';
-import { useFocusEffect, useRouter } from 'expo-router';
-import { useCallback, useRef } from 'react';
-import { ActivityIndicator, Pressable, ScrollView, Text, View } from 'react-native';
 
 interface MenuItemProps {
     icon: keyof typeof Ionicons.glyphMap;

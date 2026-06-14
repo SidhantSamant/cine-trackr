@@ -1,11 +1,13 @@
-import { useLibraryLists } from '@/hooks/useLibraryLists';
+import { router } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
 import { View } from 'react-native';
+
+import LibraryGridList from './LibraryGridList';
 import SectionHeader, { ListMediaType } from './SectionHeader';
 import AnimatedHorizontalList from './UI/AnimatedHorizontalList';
 import { MediaListSkeleton } from './UI/Skeletons';
-import LibraryGridList from './LibraryGridList';
-import { router } from 'expo-router';
+
+import { useLibraryLists } from '@/hooks/useLibraryLists';
 import { useAuthStore } from '@/store/useAuthStore';
 
 interface LibraryListSectionProps {
@@ -60,7 +62,7 @@ export default function LibraryListSection({
         if (activeTab === 'movies') targetType = 'movie';
 
         const params: any = {
-            title: title,
+            title,
         };
 
         if (status) params.status = status;
@@ -70,12 +72,12 @@ export default function LibraryListSection({
 
         router.push({
             pathname: isGridView ? '/collection/library-list' : '/home/library-list',
-            params: params,
+            params,
         });
     }, [title, status, isFavorite, activeTab]);
 
     if (!isGridView && isLoading) {
-        return <MediaListSkeleton hasTitle={true} />;
+        return <MediaListSkeleton hasTitle />;
     }
 
     if (!isGridView && activeTab === 'all' && data?.length === 0) return null;

@@ -1,3 +1,8 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { useQuery } from '@tanstack/react-query';
+import { useEffect, useState } from 'react';
+import { FlatList, Keyboard, Pressable, Text, TextInput, View } from 'react-native';
+
 import SearchResultItem from '@/components/SearchResultItem';
 import { SearchResultListSkeleton } from '@/components/UI/Skeletons';
 import { Colors } from '@/constants/Colors';
@@ -5,10 +10,6 @@ import { useGlobalError } from '@/context/GlobalErrorContext';
 import { useDebounce } from '@/hooks/useDebounce';
 import { SearchType } from '@/models/TVShowVM';
 import { tmdbService } from '@/utils/tmdbService';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
-import { FlatList, Keyboard, Pressable, Text, TextInput, View } from 'react-native';
 
 const SearchScreen = () => {
     const [searchText, setSearchText] = useState('');

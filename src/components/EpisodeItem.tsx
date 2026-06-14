@@ -1,11 +1,12 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { Image } from 'expo-image';
+import React, { useMemo } from 'react';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+
 import { Colors } from '@/constants/Colors';
 import { EpisodeVM } from '@/models/SeasonVM';
 import { getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
 import { formatDateFast, getRatingColor } from '@/utils/uiHelper';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { Image } from 'expo-image';
-import React, { useMemo } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 interface Props {
     episode: EpisodeVM;
@@ -110,7 +111,7 @@ const EpisodeItem = ({ episode, isWatched, isNextUp, onToggle }: Props) => {
                           : 'bg-neutral-600'
                 }`}>
                 <Ionicons
-                    name={'checkmark-sharp'}
+                    name="checkmark-sharp"
                     size={16}
                     color={isEpisodeWatched ? 'white' : '#333333'}
                 />

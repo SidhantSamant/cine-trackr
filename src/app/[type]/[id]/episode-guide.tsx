@@ -1,3 +1,9 @@
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { router, useLocalSearchParams, useNavigation } from 'expo-router';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import { ActivityIndicator, FlatList, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import SeasonAccordionItem from '@/components/SeasonAccordionItem';
 import { Colors } from '@/constants/Colors';
 import { useGlobalError } from '@/context/GlobalErrorContext';
@@ -6,11 +12,6 @@ import { MediaType } from '@/models/TVShowVM';
 import { useAuthStore } from '@/store/useAuthStore';
 import { mapTmdbToLibraryItem } from '@/utils/mappers';
 import { tmdbService } from '@/utils/tmdbService';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { router, useLocalSearchParams, useNavigation } from 'expo-router';
-import { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
-import { ActivityIndicator, FlatList, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function EpisodeGuideScreen() {
     const navigation = useNavigation();

@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import * as Application from 'expo-application';
-import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Application from 'expo-application';
+import { useState, useEffect } from 'react';
+import { Platform } from 'react-native';
+
 import { supabase } from '@/lib/supabase';
 
 const compareVersions = (v1: string, v2: string) => {

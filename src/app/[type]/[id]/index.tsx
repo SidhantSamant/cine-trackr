@@ -1,3 +1,13 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { useQuery } from '@tanstack/react-query';
+import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
+import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect, useMemo } from 'react';
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import CastItem from '@/components/CastItem';
 import HomeHorizontalList from '@/components/HorizontalMediaList';
 import ActionButton from '@/components/UI/ActionButton';
@@ -20,15 +30,6 @@ import {
     getMovieYear,
     getRatingColor,
 } from '@/utils/uiHelper';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { useQuery } from '@tanstack/react-query';
-import { Image } from 'expo-image';
-import { LinearGradient } from 'expo-linear-gradient';
-import { router, useLocalSearchParams } from 'expo-router';
-import { useEffect, useMemo } from 'react';
-import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type GenreItem = { id: number; name: string };
 type ProductionCompany = { id: number; logo_path: string | null; name: string };

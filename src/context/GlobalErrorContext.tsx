@@ -1,5 +1,6 @@
-import { DialogType, ErrorDialog } from '@/components/UI/ErrorDialog';
 import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+
+import { DialogType, ErrorDialog } from '@/components/UI/ErrorDialog';
 
 interface DialogConfig {
     title?: string;

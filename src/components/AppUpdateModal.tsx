@@ -1,7 +1,8 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { BackHandler, Linking, Modal, Platform, Pressable, Text, View } from 'react-native';
+
 import { Colors } from '@/constants/Colors';
 import { useAppUpdate } from '@/hooks/useAppUpdate';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { BackHandler, Linking, Modal, Platform, Pressable, Text, View } from 'react-native';
 
 export default function AppUpdateModal() {
     const { isVisible, isMandatory, version, releaseNotes, url, dismissUpdate, skipThisVersion } =

@@ -1,5 +1,6 @@
-import LibraryListSection from '@/components/LibraryListSection';
 import { ScrollView } from 'react-native';
+
+import LibraryListSection from '@/components/LibraryListSection';
 
 export default function CollectionScreen() {
     return (
@@ -17,11 +18,7 @@ export default function CollectionScreen() {
                 emptyMessage="No items in your watchlist"
             />
 
-            <LibraryListSection
-                title="Your Favorites"
-                isFavorite={true}
-                emptyMessage="No favorites yet"
-            />
+            <LibraryListSection title="Your Favorites" isFavorite emptyMessage="No favorites yet" />
 
             <LibraryListSection
                 title="Completed"

@@ -1,9 +1,10 @@
-import { Colors } from '@/constants/Colors';
-import { useAuthStore } from '@/store/useAuthStore';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { Tabs } from 'expo-router';
 import { Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { Colors } from '@/constants/Colors';
+import { useAuthStore } from '@/store/useAuthStore';
 
 export default function TabLayout() {
     const insets = useSafeAreaInsets();

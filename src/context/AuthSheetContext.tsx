@@ -1,5 +1,6 @@
-import AuthBottomSheet, { AuthBottomSheetRef } from '@/components/AuthBottomSheet';
 import { createContext, useContext, useRef } from 'react';
+
+import AuthBottomSheet, { AuthBottomSheetRef } from '@/components/AuthBottomSheet';
 
 interface AuthSheetContextType {
     presentLogin: () => void;

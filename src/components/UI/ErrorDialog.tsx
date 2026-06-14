@@ -1,6 +1,7 @@
-import { Colors } from '@/constants/Colors';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { Modal, Pressable, Text, TouchableWithoutFeedback, View } from 'react-native';
+
+import { Colors } from '@/constants/Colors';
 
 export type DialogType = 'error' | 'warning';
 

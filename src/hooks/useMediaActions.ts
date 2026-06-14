@@ -1,3 +1,7 @@
+import { Linking } from 'react-native';
+
+import { useEpisodeGuide } from './useEpisodeGuide';
+
 import { useAuthSheet } from '@/context/AuthSheetContext';
 import { useGlobalError } from '@/context/GlobalErrorContext';
 import { useToast } from '@/context/ToastContext';
@@ -6,8 +10,6 @@ import UserLibraryVM, { MediaStatus, MediaType } from '@/models/UserLibraryVM';
 import { useAuthStore } from '@/store/useAuthStore';
 import { getYouTubeKey } from '@/utils/detailHelper';
 import { mapTmdbToLibraryItem } from '@/utils/mappers';
-import { Linking } from 'react-native';
-import { useEpisodeGuide } from './useEpisodeGuide';
 
 type Params = {
     libraryItem?: Partial<UserLibraryVM> | null;

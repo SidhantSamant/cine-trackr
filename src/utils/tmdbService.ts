@@ -1,8 +1,9 @@
+import tmdbClient from './tmdbClient';
+
 import { MovieResponse, TmdbCollectionDetailVM } from '@/models/MovieVM';
 import { SeasonVM } from '@/models/SeasonVM';
-import { TrendingResponseVM } from '@/models/TrendingItemVM';
 import { MediaType, TVSeriesResponse } from '@/models/TVShowVM';
-import tmdbClient from './tmdbClient';
+import { TrendingResponseVM } from '@/models/TrendingItemVM';
 
 interface FetchListParams {
     pageParam: number;

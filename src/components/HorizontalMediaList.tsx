@@ -1,11 +1,13 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { router } from 'expo-router';
+import { FlatList, Pressable, Text, View } from 'react-native';
+
+import MediaListItem from './MediaListItem';
+
+import { Colors } from '@/constants/Colors';
 import { MovieVM } from '@/models/MovieVM';
 import { MediaType, TVShowVM } from '@/models/TVShowVM';
 import { getCategorySlug, SectionHeadings } from '@/utils/homeScreenHelper';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { router } from 'expo-router';
-import { FlatList, Pressable, Text, View } from 'react-native';
-import MediaListItem from './MediaListItem';
-import { Colors } from '@/constants/Colors';
 
 type HorizontalMediaListProps = {
     ListHeading: string;

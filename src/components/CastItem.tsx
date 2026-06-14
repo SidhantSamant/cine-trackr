@@ -1,9 +1,10 @@
-import { Colors } from '@/constants/Colors';
-import { CastVM } from '@/models/BaseMediaVM';
-import { BLURHASH_TRANSITION, getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
 import { Image } from 'expo-image';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
+import { Colors } from '@/constants/Colors';
+import { CastVM } from '@/models/BaseMediaVM';
+import { BLURHASH_TRANSITION, getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
 
 const CastItem = React.memo(({ item }: { item: CastVM }) => (
     <View className="mr-4 w-[90px] items-center">

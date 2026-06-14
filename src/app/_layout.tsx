@@ -1,24 +1,26 @@
 import AppUpdateModal from '@/components/AppUpdateModal';
 import { Colors } from '@/constants/Colors';
-import { MyDarkTheme } from '@/constants/Theme';
-import { AuthSheetProvider } from '@/context/AuthSheetContext';
-import { GlobalErrorProvider } from '@/context/GlobalErrorContext';
-import { ToastProvider } from '@/context/ToastContext';
+
 // import '@/global.css';
 import '../../global.css';
-import { supabase } from '@/lib/supabase';
-import { useAuthStore } from '@/store/useAuthStore';
-import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { ThemeProvider } from 'expo-router/react-navigation';
+import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useFonts } from 'expo-font';
 import * as NavigationBar from 'expo-navigation-bar';
 import { Stack } from 'expo-router';
+import { ThemeProvider } from 'expo-router/react-navigation';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import * as SystemUI from 'expo-system-ui';
 import { useEffect } from 'react';
+
+import { MyDarkTheme } from '@/constants/Theme';
+import { AuthSheetProvider } from '@/context/AuthSheetContext';
+import { GlobalErrorProvider } from '@/context/GlobalErrorContext';
+import { ToastProvider } from '@/context/ToastContext';
+import { supabase } from '@/lib/supabase';
+import { useAuthStore } from '@/store/useAuthStore';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -59,7 +61,7 @@ export default function RootLayout() {
                     'https://www.googleapis.com/auth/userinfo.email',
                     'https://www.googleapis.com/auth/userinfo.profile',
                 ],
-                webClientId: webClientId,
+                webClientId,
             });
         }
     }, []);

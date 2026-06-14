@@ -1,3 +1,9 @@
+import Ionicons from '@react-native-vector-icons/ionicons/static';
+import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Link } from 'expo-router';
+import { FlatList, Pressable, View, Text } from 'react-native';
+
 import { Colors } from '@/constants/Colors';
 import { TrendingItemVM } from '@/models/TrendingItemVM';
 import {
@@ -6,11 +12,6 @@ import {
     getPlaceholderImage,
     getTMDBImageSource,
 } from '@/utils/imgHelper';
-import Ionicons from "@react-native-vector-icons/ionicons/static";
-import { Image } from 'expo-image';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Link } from 'expo-router';
-import { FlatList, Pressable, View, Text } from 'react-native';
 
 type TrendingListProps = {
     listData: (TrendingItemVM | undefined)[] | undefined;
