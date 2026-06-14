@@ -6,12 +6,7 @@ import { FlatList, Pressable, View, Text } from 'react-native';
 
 import { Colors } from '@/constants/Colors';
 import { TrendingItemVM } from '@/models/TrendingItemVM';
-import {
-    BLURHASH_TRANSITION,
-    getBlurHash,
-    getPlaceholderImage,
-    getTMDBImageSource,
-} from '@/utils/imgHelper';
+import { BLURHASH_TRANSITION, getBlurHash, getTMDBImageSource } from '@/utils/imgHelper';
 
 type TrendingListProps = {
     listData: (TrendingItemVM | undefined)[] | undefined;

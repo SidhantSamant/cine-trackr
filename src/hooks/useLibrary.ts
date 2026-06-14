@@ -1,9 +1,9 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { useAuthStore } from '../store/useAuthStore';
 
 import UserLibraryVM, { MediaStatus, MediaType } from '@/models/UserLibraryVM';
-import { LibraryFilters, libraryService } from '@/utils/libraryService';
+import { libraryService } from '@/utils/libraryService';
 
 // Query Keys for Caching
 export const QUERY_KEYS = {

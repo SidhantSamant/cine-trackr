@@ -1,10 +1,4 @@
-import AppUpdateModal from '@/components/AppUpdateModal';
-import { Colors } from '@/constants/Colors';
-
-// import '@/global.css';
-import '../../global.css';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import Ionicons from '@react-native-vector-icons/ionicons/static';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useFonts } from 'expo-font';
 import * as NavigationBar from 'expo-navigation-bar';
@@ -14,7 +8,10 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import * as SystemUI from 'expo-system-ui';
 import { useEffect } from 'react';
+import '../../global.css';
 
+import AppUpdateModal from '@/components/AppUpdateModal';
+import { Colors } from '@/constants/Colors';
 import { MyDarkTheme } from '@/constants/Theme';
 import { AuthSheetProvider } from '@/context/AuthSheetContext';
 import { GlobalErrorProvider } from '@/context/GlobalErrorContext';

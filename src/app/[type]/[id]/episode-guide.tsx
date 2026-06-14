@@ -76,18 +76,6 @@ export default function EpisodeGuideScreen() {
         setExpandedSeasonId((prev) => (prev === seasonNum ? 0 : seasonNum));
     }, []);
 
-    if (isLoading) {
-        return (
-            <View className="flex-1 items-center justify-center bg-[#121212]">
-                <ActivityIndicator size="large" color={Colors.primary} />
-            </View>
-        );
-    }
-
-    if (error || (!data && !isLoading)) {
-        return <View className="flex-1 bg-[#121212]" />;
-    }
-
     const renderItem = useCallback(
         ({ item }: { item: SeasonVM }) => (
             <SeasonAccordionItem
@@ -100,6 +88,18 @@ export default function EpisodeGuideScreen() {
         ),
         [id, showMetadata, expandedSeasonId, handleToggle],
     );
+
+    if (isLoading) {
+        return (
+            <View className="flex-1 items-center justify-center bg-[#121212]">
+                <ActivityIndicator size="large" color={Colors.primary} />
+            </View>
+        );
+    }
+
+    if (error || (!data && !isLoading)) {
+        return <View className="flex-1 bg-[#121212]" />;
+    }
 
     return (
         <View
