@@ -123,3 +123,69 @@ export default function TabLayout() {
         </Tabs>
     );
 }
+
+// Native Tabs
+// import { NativeTabs } from 'expo-router/unstable-native-tabs';
+// import { Colors } from '@/constants/Colors';
+// import { useAuthStore } from '@/store/useAuthStore';
+
+// export default function TabLayout() {
+//     const user = useAuthStore((state) => state.user);
+
+//     return (
+//         <NativeTabs
+//             rippleColor={'transparent'}
+//             // rippleColor={'rgba(255, 255, 255, 0.1)'}
+//             shadowColor={Colors.tabIndicator}
+//             indicatorColor={Colors.tabIndicator}
+//             backgroundColor={Colors.tabBackground}
+//             iconColor={{
+//                 default: Colors.inactiveTab,
+//                 selected: Colors.primary,
+//             }}
+//             labelStyle={{
+//                 default: { fontSize: 10, fontWeight: '500' },
+//                 selected: { fontSize: 10, fontWeight: '700' },
+//             }}>
+//             <NativeTabs.Trigger name="home">
+//                 <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
+//                 <NativeTabs.Trigger.Icon
+//                     sf={{
+//                         default: 'house',
+//                         selected: 'house.fill',
+//                     }}
+//                     md="home"
+//                 />
+//             </NativeTabs.Trigger>
+
+//             <NativeTabs.Trigger name="search">
+//                 <NativeTabs.Trigger.Label>Search</NativeTabs.Trigger.Label>
+//                 <NativeTabs.Trigger.Icon sf="magnifyingglass" md="search" />
+//             </NativeTabs.Trigger>
+
+//             {user && (
+//                 <NativeTabs.Trigger name="collection">
+//                     <NativeTabs.Trigger.Label>Collection</NativeTabs.Trigger.Label>
+//                     <NativeTabs.Trigger.Icon
+//                         sf={{
+//                             default: 'square.stack',
+//                             selected: 'square.stack.fill',
+//                         }}
+//                         md="collections_bookmark"
+//                     />
+//                 </NativeTabs.Trigger>
+//             )}
+
+//             <NativeTabs.Trigger name="profile">
+//                 <NativeTabs.Trigger.Label>Profile</NativeTabs.Trigger.Label>
+//                 <NativeTabs.Trigger.Icon
+//                     sf={{
+//                         default: 'person',
+//                         selected: 'person.fill',
+//                     }}
+//                     md="person"
+//                 />
+//             </NativeTabs.Trigger>
+//         </NativeTabs>
+//     );
+// }
